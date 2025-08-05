@@ -1,0 +1,137 @@
+:root {
+    --primary: #FF0000;
+    --secondary: #000000;
+    --accent: #FFFFFF;
+    --dark: #0D0D0D;
+    --text: #F0F0F0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--text);
+}
+
+header {
+    background: linear-gradient(to bottom, var(--secondary), transparent);
+    padding: 20px 5%;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 10;
+}
+
+.chamada {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://image.tmdb.org/t/p/original/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.chamada-texto {
+    margin-bottom: 30px;
+    max-width: 800px;
+}
+
+.chamada h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.chamada p {
+    font-size: 1.2rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.chamada iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border: 3px solid var(--primary);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.categoria {
+    padding: 40px 5%;
+}
+
+.categoria h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+    border-left: 4px solid var(--primary);
+    padding-left: 15px;
+}
+
+.categoria-videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.categoria-videos a {
+    transition: transform 0.3s ease;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.categoria-videos a:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.categoria-videos img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.categoria-videos a:hover img {
+    box-shadow: 0 0 15px var(--primary);
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 1.8rem;
+        padding: 15px 5%;
+    }
+    
+    .chamada {
+        height: auto;
+        padding: 40px 5%;
+    }
+    
+    .chamada h1 {
+        font-size: 2rem;
+    }
+    
+    .chamada iframe {
+        height: 250px;
+    }
+    
+    .categoria-videos {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
