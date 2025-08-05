@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guiminamflix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Arquivo CSS externo -->
+</head>
+<body>
+    <header>GUIMINAMFLIX</header>
+
+    <section class="chamada">
+        <div class="chamada-texto">
+            <h1>ATRAVÉS DO ARANHAVERSO</h1>
+            <p>#homem-aranha</p>
+        </div>
+
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/gt_fAE1Eg2Q?si=EEv-tsY_b1B2OwKE&autoplay=1&mute=1&controls=0" 
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="categoria">
+        <h2>Filmes e séries</h2>
+        <div class="categoria-videos">
+            <a href="https://www.youtube.com/watch?v=cs15QqG6Gjc" target="_blank">
+                <img src="https://img.youtube.com/vi/cs15QqG6Gjc/maxresdefault.jpg" alt="Homem-Aranha: Através do Aranhaverso">
+            </a>
+            <a href="https://www.youtube.com/watch?v=nCmIwcycUJ8" target="_blank">
+                <img src="https://img.youtube.com/vi/nCmIwcycUJ8/maxresdefault.jpg" alt="Homem-Aranha: Sem Volta Para Casa">
+            </a>
+            <a href="https://www.youtube.com/watch?v=FvRmEapoHRc" target="_blank">
+                <img src="https://img.youtube.com/vi/FvRmEapoHRc/maxresdefault.jpg" alt="Homem-Aranha: Longe de Casa">
+            </a>
+            <a href="https://www.youtube.com/watch?v=Ipkw_hWW-Hw" target="_blank">
+                <img src="https://img.youtube.com/vi/Ipkw_hWW-Hw/maxresdefault.jpg" alt="Homem-Aranha: De Volta ao Lar">
+            </a>
+            <a href="https://www.youtube.com/watch?v=d4DzMNGoyis" target="_blank">
+                <img src="https://img.youtube.com/vi/d4DzMNGoyis/maxresdefault.jpg" alt="Homem-Aranha: No Aranhaverso">
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Efeito de digitação no título
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            const text = 'GUIMINAMFLIX';
+            header.textContent = '';
+            
+            let i = 0;
+            const typingEffect = setInterval(() => {
+                if (i < text.length) {
+                    header.textContent += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typingEffect);
+                }
+            }, 150);
+            
+            // Efeito de hover nos vídeos
+            const videos = document.querySelectorAll('.categoria-videos a');
+            videos.forEach(video => {
+                video.addEventListener('mouseover', () => {
+                    video.querySelector('img').style.transform = 'scale(1.1)';
+                });
+                video.addEventListener('mouseout', () => {
+                    video.querySelector('img').style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
